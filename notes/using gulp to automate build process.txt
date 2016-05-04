@@ -1,0 +1,61 @@
+GULP:A node.js tool which helps automate your build process
+
+go to node.js cmd-->go into your project folder-->
+
+npm init-->create a package .json file-->this contains info about the packages being used by that file
+
+then install the packages-->
+
+npm install gulp gulp-react gulp-concat --save
+
+gulp-react-->helps convert the jsx into compilable javascript
+gulp-concat-->concats the different jsx files into one file
+
+npm install gulp-cli -g-->this command enables us to use gulp from the command line..ie.we can do somthing like
+
+-->gulp -v -->this gives us a version of gulp installed
+
+whenever we run a gulp inside a folder...gulp looks for a file called gulpfile.js-->this is the file on which gulp works on
+and automates build tasks.
+
+gulpfile.js:
+
+var gulp=require("gulp"),
+    react=require("gulp-react"),
+    concat=require("gulp-concat");
+
+//gulp immediately executes a task which is set as default
+
+gulp.task("default",function(){
+     //asking gulp to look for all the files inside the src folder
+      return gulp.src("src/**")
+
+         //pipe is like the next course of action.This command tels gulp to convert all into js executable files
+             .pipe(react())
+
+          //tells gulp to concat all thse files and store it in a single file called application.js
+             .pipe(concat('application.js'))
+
+          //this sets the destination where this file should be located.
+             .pipe(gulp.dest('./'))
+});
+
+
+STEPS TO AUTOMATE TASKS:
+
+1)go to your folder directory eg:in my case react.js is the name of my folder
+2)create a folder called src where you create mulitple jsx files each of whihc holds a different react component.
+eg
+ src:
+   thumbnail.jsx
+   thumbnailList.jsx
+    button.jsx
+    app.jsx
+
+3)go to node.js cmd....go to react.js folder-->npm init-->creates package .json file
+4)npm install gulp gulp-react gulp-concat --save
+5)npm install gulp-cli -g
+6)create a file called gulpfile.js inside react.js folder.This file is used by gulp to automate tasks.
+7)Execute gulp in command line
+8)a file is created in the desired destination..in the above case application.js file is created.
+8)go to index.html-->delete jsx transformer script tag and add <script src="application.js"></script>

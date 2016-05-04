@@ -53,7 +53,7 @@ https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
             render:function(){
             
                   return(
-                      
+                        <div className="col-sm-6 col-md-4">
                         <div className="thumbnail">
                            <img src={this.props.imageUrl}/>
                            <div className="caption">
@@ -63,6 +63,8 @@ https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
                              
                              <Button name={this.props.name}></Button>
                         </div>
+
+                       </div>
                     )
             }
          });
