@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html>
+
+   <head>
+    
+        <title>react app</title>
+       
+    
+    </head>
+
+       <body>
+          hi there
+    
+    <script src="https://fb.me/react-15.0.2.js"></script>
+    <script src="https://fb.me/react-dom-15.0.2.js"></script>
+           
+    <script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>       
+    </body>
+    
+    
+    <script type="text/jsx">//this tells JSX transformer to convert any jsx into javascript compilable code
+    
+     var helloWorld=React.createClass({
+     
+        render:function(){
+        
+            return <div>
+            hello my name is akash
+             </div>
+        }
+     });
+     
+      var element=React.createElement(helloWorld);
+       
+       ReactDOM.render(element,document.body);
+    
+    </script>
+</html>
+
+
+EXAMPLE 2:
+
+<!doctype html>
+
+<html>
+
+   <head>
+    
+        <title>react app</title>
+       
+    
+    </head>
+
+       <body>
+           
+           <div>
+             zeher mein pale bichoo o mein pale
+           </div>
+        <div id="myDiv">
+           
+           
+           </div>
+    
+    <script src="https://fb.me/react-15.0.2.js"></script>
+    <script src="https://fb.me/react-dom-15.0.2.js"></script>
+           
+    <script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>       
+    </body>
+    
+    
+    <script type="text/jsx">
+    var divId=document.getElementById("myDiv");
+     var helloWorld=React.createClass({
+     
+        render:function(){
+        
+            return <div>
+            hello my name is akash
+             </div>
+        }
+     });
+     
+      var element=React.createElement(helloWorld);
+       
+       ReactDOM.render(element,divId);
+    
+    </script>
+</html>

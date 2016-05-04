@@ -1,0 +1,43 @@
+JSX-extension of javascript which lets us write html inside javascript.
+
+{
+   render:function(){
+      return 
+  <div>
+     <p>hello</p>  ----->html inside javascript function
+  </div>
+  }
+}
+//
+since we cannot compile html inside js we need to convert into a compilable form:
+
+{
+  render:function(){
+        return React.createElement("div",null,"hello world");
+   }
+}
+
+
+react class-describes the form and function of the react component but does not provide any functionality.It itself cannot be used
+in the DOM.It must be first instantiated and then render that instantiated copy in the DOM.
+
+react library-->storehouse for core libraries which is used to define the react classes and react components
+react dom library-->it is used for DOM manipulations in which we render a react component on the DOM.
+<script>
+    
+
+  var helloWorld=React.createClass({
+        render:function(){
+             return <div>
+                   hello
+               </div>
+           }
+});-->created a react class-->this must always have a render method which must always return a jsx
+
+  var element=React.createElement(helloworld);--instantiated the class to be used in the DOM
+
+
+</script>
+
+
+

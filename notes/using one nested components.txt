@@ -1,0 +1,75 @@
+COMPOSITION:USING one components within the other
+
+<!doctype html>
+
+<html>
+
+   <head>
+    
+        <title>react app</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+       
+    
+    </head>
+
+       <body>
+          
+        <div id="myDiv">
+           
+           
+           </div>
+           <div id="div2">
+           </div>
+               
+             
+    
+    <script src="https://fb.me/react-15.0.2.js"></script>
+    <script src="https://fb.me/react-dom-15.0.2.js"></script>
+           
+    <script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>   
+           
+           
+ <script type="text/jsx">
+      
+      var div1=document.getElementById("myDiv");
+      var Badge=React.createClass({
+      
+          render:function(){
+          
+               return <button className="btn btn-primary">{this.props.title}-{this.props.number}</button>
+          }
+      })
+      
+      var Form=React.createClass({
+      
+          render:function(){
+          
+                return <div className="container">
+                   <div className="row">
+                   <div className="formDiv">
+                    <div className="form-group">
+                     <Badge title={this.props.title} number={this.props.number} > </Badge>//using badge component inside form
+                     </div>
+                     </div>
+                     </div>
+                 </div>
+          }
+      })
+           
+           var message={
+               title:"inbox",
+               number:23
+           };
+           
+           var element=React.createElement(Form,message);
+           ReactDOM.render(element,div1);
+            
+      
+      
+    </script>           
+    </body>
+    
+    
+   
+</html>

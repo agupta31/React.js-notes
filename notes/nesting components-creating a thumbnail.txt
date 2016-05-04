@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html>
+
+   <head>
+    
+        <title>react app</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+       
+    
+    </head>
+
+       <body>
+          
+         <div class="container">
+             
+             <div class="row">
+                <div class="col-sm-4 target">
+                 
+                 </div>
+             </div>
+           
+           </div>
+             
+    
+    <script src="https://fb.me/react-15.0.2.js"></script>
+    <script src="https://fb.me/react-dom-15.0.2.js"></script>
+           
+    <script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>   
+           
+           
+ <script type="text/jsx">
+      
+         var target=document.querySelector(".target");
+         
+         var Badge=React.createClass({
+         
+             render:function(){
+             
+                 return <button className="btn btn-primary">{this.props.name}</button>
+             }
+         });
+         
+         
+         var Thumbnail=React.createClass({
+         
+            render:function(){
+                        
+                        
+                 return  <div className="thumbnail">
+                  <img src={this.props.imageUrl}/>
+                  <div class="caption">
+                      <h3>{this.props.title}</h3>
+                       <p>hey there this is a thumbnail
+                        eqwewqeqweqweqweqweqweqweqweqweq
+                        assadsadasdasdasdasddsdasddddddd
+                          </p>
+                       
+                       <Badge name={this.props.name}></Badge>
+                 </div>
+                 </div>
+               
+            }
+            
+         });
+         
+         var message={
+             name:"button1",
+             title:"Dont give up",
+             imageUrl:"https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAK7AAAAJDNlYjg4MjJjLWUyZWQtNDNlZC1hNGI1LWJiMDUwMTM5NGIxZQ.jpg"
+             
+         };
+         
+         var element=React.createElement(Thumbnail,message);
+         ReactDOM.render(element,target);
+      
+    </script>           
+    </body>
+    
+    
+   
+</html>

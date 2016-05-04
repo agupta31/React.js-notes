@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html>
+
+   <head>
+    
+        <title>react app</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+       <link rel="stylesheet" href="app.css">
+       
+    
+    </head>
+
+       <body>
+          
+         <div class="container">
+              <div class="row">
+             
+                 <div class="col-md-5 target">
+                  
+                  
+                  
+                  </div>
+               </div>
+          
+           
+           </div>
+             
+    
+    <script src="https://fb.me/react-15.0.2.js"></script>
+    <script src="https://fb.me/react-dom-15.0.2.js"></script>
+           
+    <script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>   
+           
+           
+ <script type="text/jsx">
+       
+         var target=document.querySelector(".target");
+         
+         var Button=React.createClass({
+         
+              render:function(){
+              
+                    return(
+                          <button className="btn btn-primary">{this.props.name}</button>
+                     )
+              }
+         });
+         
+         var Thumbnail=React.createClass({
+         
+            render:function(){
+            
+                  return(
+                      
+                        <div className="thumbnail">
+                           <img src={this.props.imageUrl}/>
+                           <div className="caption">
+                              <h2>{this.props.title}</h2>
+                              
+                           </div>
+                             
+                             <Button name={this.props.name}></Button>
+                        </div>
+                    )
+            }
+         });
+         
+         var ThumbnailList=React.createClass({
+                  render:function(){
+                     var list=this.props.thumbnailData.map(function(thumbData){
+                        return <Thumbnail {...thumbData}/>
+                     });
+                  
+                      return(
+                          <div>
+                            {list}
+                          </div>
+                        )
+                  }
+            
+         });
+         
+         var content={
+              thumbnailData: [{
+         
+                   name:"react tutorial",
+                   title:"react.js",      
+                   imageUrl:"http://devstickers.com/assets/img/pro/cew3.png"
+               },
+               
+               {
+                  name:"gulp tutorial",
+                  title:"gulp.js",      
+                  imageUrl:"http://www.chloechen.io/wp-content/uploads/2015/07/gulp.png"
+               },
+               {
+                   name:"angular tutorial",
+                    title:"angular.js.js",      
+                    imageUrl:"https://angular.io/resources/images/logos/angular2/shield-with-beta.png"
+               }
+               ]
+            };
+         
+         var element=React.createElement(ThumbnailList,content);
+         ReactDOM.render(element,target);
+        
+    </script>           
+    </body>
+   
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html>
+
+   <head>
+    
+        <title>react app</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+       <link rel="stylesheet" href="app.css">
+       
+    
+    </head>
+
+       <body>
+          
+         <div class="container">
+             
+           <div id="pagination">
+             
+             
+             </div>
+           
+           </div>
+             
+    
+    <script src="https://fb.me/react-15.0.2.js"></script>
+    <script src="https://fb.me/react-dom-15.0.2.js"></script>
+           
+    <script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>   
+           
+           
+ <script type="text/jsx">
+      
+         var page=document.getElementById("pagination");
+         
+         var MyPaginations=React.createClass({
+         
+                 render:function(){
+                 
+                     return (
+                        
+                           <nav>
+                           <ul className="pagination">
+                             <li >
+                              <a href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                              
+                              </a>
+                              </li>
+                              
+                              <li><a href="#">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                              
+                              <li>
+                              <a href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                              </a>
+                              </li>
+                           
+                           </ul>
+                           
+                           </nav>
+                      )
+                    
+                 }
+         });
+         
+         var Jumbo=React.createClass({
+         
+              render:function(){
+              
+                   return (
+                      <div className="jumbotron">
+                       <h1>{this.props.title}</h1>
+                      
+                      <MyPaginations></MyPaginations> 
+                      
+                      </div>
+                   
+                    )
+              }
+         });
+         var message={
+              title:"hello world"
+         };
+         
+         var element=React.createElement(Jumbo,message);
+         ReactDOM.render(element,page);
+      
+    </script>           
+    </body>
+    
+    
+   
+</html>
