@@ -1,13 +1,16 @@
 var React=require("react");
 
-       var Button=React.createClass({
-       
-           render:function(){
+var Button=React.createClass({
+    
+    
+       render:function(){
            
-               return(
-                     <button className="btn btn-info">{this.props.name}</button>
-                 )
-           }
-       });
+           return(
+                <button onClick={this.props.handleClick} className="btn btn-primary">{this.props.name}</button>
+            )
+            
+            
+       }
+});
 
 module.exports=Button;
