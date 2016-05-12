@@ -1,0 +1,29 @@
+var React=require("react");
+var Button=require("./eventGenerator");
+var Input=require("./commentBox");
+
+var ReactDemo=React.createClass({
+    
+       getInitialState:function(){
+            return{
+                text:""
+            }
+       },
+       handleChange:function(event){
+          this.setState({
+                text:event.target.value
+          });  
+       },
+       render:function(){
+           
+            return(
+                 <div className="container">
+                   
+                   <input type="text" value={this.state.text} onChange={this.handleChange}/>
+                      <p>{this.state.text}</p>
+                </div>
+             )
+       }
+});
+
+module.exports=ReactDemo;
